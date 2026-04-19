@@ -10,29 +10,32 @@ public class Ventas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String name;
 
-    private int sku;
+    private String sku;
 
     private double price;
+
+    private int stock;
 
     public Ventas() {
     }
 
-    public Ventas(String id, String name, int sku, double price) {
+    public Ventas(Long id, String name, String sku, double price, int stock) {
         this.id = id;
         this.name = name;
         this.sku = sku;
         this.price = price;
+        this.stock = stock;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,11 +47,11 @@ public class Ventas {
         this.name = name;
     }
 
-    public int getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(int sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 
@@ -58,6 +61,14 @@ public class Ventas {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
 }
